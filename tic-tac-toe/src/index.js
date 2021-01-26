@@ -14,49 +14,18 @@ function Square(props) {    // Functional Component
 }
 
 class Board extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            squares: Array(9).fill(null),
-            xIsNext: true,
-        };
-    }
-
-    handleClick(i) {
-        const new_squares = this.state.squares.slice();
-        if (calculateWinner(new_squares) || new_squares[i]) {
-            return;
-        }
-        new_squares[i] = this.state.xIsNext ? 'X' : 'O';
-        this.setState({
-            squares: new_squares,
-            xIsNext: !this.state.xIsNext,
-        });
-    }
-
     renderSquare(i) {
         return (
             <Square 
-                value={this.state.squares[i]}
-                onClick={() => this.handleClick(i)} 
+                value={this.props.squares[i]}
+                onClick={() => this.props.onClick(i)} 
             />)
         ;
     }
   
     render() {
-        const winner = calculateWinner(this.state.squares);
-        let status;
-        if (winner) {
-            status = 'Winner ' + winner;
-        } else {
-            status = 'Next Player: ' + (this.state.xIsNext ? 'X' : 'O');
-        }
-
         return (
             <div>
-                <div className="status">
-                    {status}
-                </div>
                 <div className="board-row">
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}
@@ -78,15 +47,75 @@ class Board extends React.Component {
 }
   
 class Game extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            history: [{
+                squares: Array(9).fill(null),
+            }],
+            stepNumber: 0,
+            xIsNext: true,
+        };
+    }
+
+    handleClick(i) {
+        const history = this.state.history.slice(0, this.state.stepNumber + 1);
+        const current = history[history.length - 1];
+        const new_squares = current.squares.slice();
+
+        if (calculateWinner(new_squares) || new_squares[i]) {
+            return;
+        }
+        
+        new_squares[i] = this.state.xIsNext ? 'X' : 'O';
+        this.setState({
+            history: history.concat([{
+                squares: new_squares,
+            }]),
+            stepNumber: history.length,
+            xIsNext: !this.state.xIsNext,
+        });
+    }
+
+    jumpTo(step) {
+        this.setState({
+            stepNumber: step,
+            xIsNext: (step % 2) === 0,
+        });
+    }
+
     render() {
+        const history = this.state.history;
+        const current = history[this.state.stepNumber];
+        const winner = calculateWinner(current.squares);
+
+        const moves = history.map((step, move) => {
+            const desc = move ? 'Go to move #' + move : 'Go to game start';
+            return (
+                <li key={move}>
+                    <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                </li>
+            );
+        });
+
+        let status;
+        if (winner) {
+            status = 'Winner ' + winner;
+        } else {
+            status = 'Next Player: ' + (this.state.xIsNext ? 'X' : 'O');
+        }
+
         return (
             <div className="game">
                 <div className="game-board">
-                    <Board />
+                    <Board
+                        squares={current.squares}
+                        onClick={(i) => this.handleClick(i)}
+                    />
                 </div>
                 <div className="game-info">
-                    <div>{/* status */}</div>
-                    <ol>{/* TODO */}</ol>
+                    <div>{status}</div>
+                    <ol>{moves}</ol>
                 </div>
             </div>
         );
@@ -123,5 +152,9 @@ function calculateWinner(squares) {
 
 // TODO
 // [ ] Draw Condition
-// [ ] Colour of X and O
 // [ ] Reset Game button
+// [ ] Colour of X and O
+// [ ] Bold currently selected move
+// [ ] Match Results (Number of Draws, Wins)
+// [ ] Highlight the squares that caused the win
+// [ ] Display location of move (row, col) in history
