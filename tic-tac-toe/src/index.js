@@ -59,6 +59,9 @@ class Game extends React.Component {
       ],
       stepNumber: 0,
       xIsNext: true,
+      xWins: 0,
+      oWins: 0,
+      draws: 0,
     };
   }
 
@@ -121,7 +124,11 @@ class Game extends React.Component {
         <h1>
           <u>Tic-Tac-Toe</u>
         </h1>
-        <p>Wins by X: , Wins by O: , Draws: </p>
+        <p>
+          <u>Wins by X</u>: <span>{this.state.xWins}</span>, <u>Wins by O</u>:{" "}
+          <span>{this.state.oWins}</span>, <u>Draws</u>:{" "}
+          <span>{this.state.draws}</span>
+        </p>
         <div className="game-board">
           <br />
           <Board
@@ -142,7 +149,7 @@ class Game extends React.Component {
 
 // ========================================
 function calculateWinner(squares) {
-    const lines = [
+  const lines = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -152,12 +159,12 @@ function calculateWinner(squares) {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  
+
   for (let i = 0; i < lines.length; i++) {
-      const [a, b, c] = lines[i];
-      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-          return squares[a];
-        }
+    const [a, b, c] = lines[i];
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
   }
   return null;
 }

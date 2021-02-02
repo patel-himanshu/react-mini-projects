@@ -72,3 +72,12 @@ h1 {
 .game-info ol li {
   margin-left: -2rem;
 }
+
+span {
+    color: green;
+    background-color: yellow;
+    margin: 0 2px;
+    padding: 1px 7px;
+    font-weight: bold;
+    border: 1px solid orange;
+}
