@@ -1,0 +1,15 @@
+nav {
+  background-color: #93d0fa;
+  border-bottom: 4px solid #2da8fc;
+  box-shadow: 5px 5px 10px grey;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: "Courier New", Monospace, serif;
+}
+
+ul {
+  font-family: "Geogia", Arial, sans-serif;
+}
