@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
-import Contact from "./components/Contact";
+import Contacts from "./components/Contacts";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -9,17 +9,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="container">
-        <Contact name="Test Name 1" email="test1@testing.com" phone="111" />
-        <Contact name="Test Name 2" email="test2@testing.com" phone="222" />
-        <Contact name="Test Name 2" email="test2@testing.com" phone="222" />
-        <Contact name="Test Name 2" email="test2@testing.com" phone="222" />
-        <Contact name="Test Name 2" email="test2@testing.com" phone="222" />
-        <Contact name="Test Name 2" email="test2@testing.com" phone="222" />
-        <Contact name="Test Name 2" email="test2@testing.com" phone="222" />
-        <Contact name="Test Name 2" email="test2@testing.com" phone="222" />
-        <Contact name="Test Name 2" email="test2@testing.com" phone="222" />
-        <Contact name="Test Name 2" email="test2@testing.com" phone="222" />
-        <Contact name="Test Name 2" email="test2@testing.com" phone="222" />
+        <Contacts />
       </div>
     </div>
   );

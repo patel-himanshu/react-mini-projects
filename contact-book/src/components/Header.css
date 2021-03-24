@@ -8,13 +8,16 @@ ul {
   font-family: "Geogia", Arial, sans-serif;
 }
 
-.navbar-brand,
-.navbar-brand:hover {
+.navbar-brand {
   font-weight: bold;
   color: rgb(0, 0, 56);
   font-family: "Courier New", Monospace, serif;
   /* text-shadow: 2px 2px 1px rgb(192, 163, 163); */
   text-shadow: 0 5px 6px rgba(0, 0, 0, 0.12), 0 5px 4px rgba(0, 0, 0, 0.24);
+}
+
+.navbar-brand:hover {
+  text-shadow: 0 3px 4px orange;
 }
 
 .nav-link {
@@ -28,6 +31,6 @@ ul {
 }
 
 .nav-link:hover {
-  background-color: #82cbfc;
+  background-color: #fcd782;
   box-shadow: 0 2px 5px blue, 0 2px 2px blue;
 }
