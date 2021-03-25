@@ -30,7 +30,7 @@ const Header = (props) => {
         >
           <ul className="navbar-nav nav-pills ml-auto">
             <li className="nav-item">
-              <a className="nav-link pr-1 text-right" href="/">
+              <a className="nav-link pl-2 pr-2 text-right" href="/">
                 Home
               </a>
             </li>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Consumer } from "../context";
+import { Consumer } from "../../context";
 
 export default class Contact extends Component {
   state = {
@@ -38,15 +38,15 @@ export default class Contact extends Component {
                 {name}{" "}
                 {contactDetailsVisible ? (
                   <i
-                    className="fa fa-caret-up"
+                    className="fa fa-caret-up pr-4"
                     onClick={this.onClickShow.bind(this)}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: "pointer", float: "left" }}
                   ></i>
                 ) : (
                   <i
-                    className="fa fa-caret-down"
+                    className="fa fa-caret-down pr-4"
                     onClick={this.onClickShow.bind(this)}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: "pointer", float: "left" }}
                   ></i>
                 )}
                 {/* Contact Delete section */}
