@@ -24,7 +24,7 @@ ul {
   color: blue;
   margin-top: 5px;
   padding-left: 2rem;
-  border: 2px solid blue;
+  border: 2px solid rgb(69, 69, 253);
   background-color: #46b5ff;
   box-shadow: 0 5px 6px rgba(0, 0, 0, 0.12), 0 5px 4px rgba(0, 0, 0, 0.24);
   /* text-shadow: 2px 2px 1px rgb(251, 244, 135); */

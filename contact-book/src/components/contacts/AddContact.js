@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
-import uuid from "uuid";
+import FormInputField from "../FormInputField";
+import { v1 as uuid } from "uuid";
 
 export default class AddContact extends Component {
   state = {
     name: "",
     email: "",
     phone: "",
+    errors: {},
   };
 
   onFieldChange = (e) => {
@@ -16,6 +18,18 @@ export default class AddContact extends Component {
   onClickSubmit = (dispatch, e) => {
     e.preventDefault();
     const { name, email, phone } = this.state;
+    if (name === "") {
+      this.setState({ errors: { name: "Name is required" } });
+      return;
+    }
+    if (email === "") {
+      this.setState({ errors: { email: "E-Mail is required" } });
+      return;
+    }
+    if (phone === "") {
+      this.setState({ errors: { phone: "Phone Number is required" } });
+      return;
+    }
     const newContact = {
       id: uuid(),
       name,
@@ -29,11 +43,12 @@ export default class AddContact extends Component {
       name: "",
       email: "",
       phone: "",
+      errors: {},
     });
   };
 
   render() {
-    const { name, email, phone } = this.state;
+    const { name, email, phone, errors } = this.state;
 
     return (
       <Consumer>
@@ -41,51 +56,46 @@ export default class AddContact extends Component {
           const { dispatch } = value;
 
           return (
-            <div className="card mb-3">
-              <div className="card-header">Add New Contact</div>
+            <div className="card mb-3 w-75 mx-auto">
+              <div className="card-header font-weight-bold w-100 d-flex justify-content-center">
+                Add New Contact
+              </div>
               <div className="card-body">
                 <form onSubmit={this.onClickSubmit.bind(this, dispatch)}>
-                  <div className="form-group">
-                    {/* Name Input */}
-                    <label htmlFor="name">Name</label>
-                    <input
-                      className="form-control form-control-sm"
-                      type="text"
-                      name="name"
-                      placeholder="Enter your Name"
-                      value={name}
-                      onChange={this.onFieldChange}
-                    ></input>
-                    <br />
-                    {/* E-Mail Input */}
-                    <label htmlFor="email">E-Mail</label>
-                    <input
-                      className="form-control form-control-sm"
-                      type="email"
-                      name="email"
-                      placeholder="Enter your E-Mail"
-                      value={email}
-                      onChange={this.onFieldChange}
-                    ></input>
-                    <br />
-                    {/* Phone Input */}
-                    <label htmlFor="phone">Phone</label>
-                    <input
-                      className="form-control form-control-sm"
-                      type="number"
-                      name="phone"
-                      placeholder="Enter your Phone Number"
-                      value={phone}
-                      onChange={this.onFieldChange}
-                    ></input>
-                    <br />
-                    {/* Submit Button */}
-                    <input
-                      className="btn btn-block bg-primary text-light"
-                      type="submit"
-                      value="Add Contact"
-                    ></input>
-                  </div>
+                  {/* Name Input */}
+                  <FormInputField
+                    label="Name :"
+                    name="name"
+                    placeholder="Enter your Name"
+                    value={name}
+                    onChange={this.onFieldChange}
+                    error={errors.name}
+                  />
+                  {/* E-Mail Input */}
+                  <FormInputField
+                    label="E-Mail :"
+                    type="email"
+                    name="email"
+                    placeholder="Enter your E-Mail"
+                    value={email}
+                    onChange={this.onFieldChange}
+                    error={errors.email}
+                  />
+                  {/* Phone Input */}
+                  <FormInputField
+                    label="Phone Number :"
+                    name="phone"
+                    placeholder="Enter your Phone Number"
+                    value={phone}
+                    onChange={this.onFieldChange}
+                    error={errors.phone}
+                  />
+                  {/* Submit Button */}
+                  <input
+                    className="btn btn-sm btn-block bg-primary text-light font-weight-bold w-50 mx-auto"
+                    type="submit"
+                    value="Add Contact"
+                  ></input>
                 </form>
               </div>
             </div>
