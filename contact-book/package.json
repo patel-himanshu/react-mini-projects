@@ -2,7 +2,7 @@
   "name": "contact-book",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/patel-himanshu/react-mini-projects/contact-book",
+  "homepage": "https://patel-himanshu.github.io/react-mini-projects/contact-book",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
