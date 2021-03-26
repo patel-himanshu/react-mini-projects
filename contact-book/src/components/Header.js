@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = (props) => {
@@ -8,10 +9,10 @@ const Header = (props) => {
   return (
     <nav className="navbar navbar-expand-sm sticky-top mb-4">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           <i className="fa fa-book" aria-hidden="true"></i>
           {props.branding}
-        </a>
+        </Link>
 
         <button
           className="navbar-toggler navbar-light"
@@ -30,9 +31,17 @@ const Header = (props) => {
         >
           <ul className="navbar-nav nav-pills ml-auto">
             <li className="nav-item">
-              <a className="nav-link pl-2 pr-2 text-right" href="/">
-                Home
-              </a>
+              <Link className="nav-link pl-2 pr-2 mr-1 ml-1 text-right" to="/">
+                <i className="fa fa-home"> Home</i>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link pl-2 pr-2 mr-1 ml-1 text-right"
+                to="/add-contact"
+              >
+                <i className="fa fa-plus"> Add Contact</i>
+              </Link>
             </li>
           </ul>
         </div>

@@ -45,6 +45,8 @@ export default class AddContact extends Component {
       phone: "",
       errors: {},
     });
+
+    this.props.history.push("/");
   };
 
   render() {
@@ -57,7 +59,10 @@ export default class AddContact extends Component {
 
           return (
             <div className="card mb-3 w-75 mx-auto">
-              <div className="card-header font-weight-bold w-100 d-flex justify-content-center">
+              <div
+                className="card-header font-weight-bold w-100 d-flex justify-content-center"
+                style={{ fontSize: "1.5rem" }}
+              >
                 Add New Contact
               </div>
               <div className="card-body">
