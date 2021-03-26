@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../../context";
 import FormInputField from "../FormInputField";
 import { v1 as uuid } from "uuid";
+import axios from "axios";
 
 export default class AddContact extends Component {
   state = {
@@ -15,7 +16,7 @@ export default class AddContact extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  onClickSubmit = (dispatch, e) => {
+  onClickSubmit = async (dispatch, e) => {
     e.preventDefault();
     const { name, email, phone } = this.state;
     if (name === "") {
@@ -37,7 +38,11 @@ export default class AddContact extends Component {
       phone,
     };
 
-    dispatch({ type: "ADD_CONTACT", payload: newContact });
+    const response = await axios.post(
+      "https://jsonplaceholder.typicode.com/posts",
+      newContact
+    );
+    dispatch({ type: "ADD_CONTACT", payload: response.data });
 
     this.setState({
       name: "",

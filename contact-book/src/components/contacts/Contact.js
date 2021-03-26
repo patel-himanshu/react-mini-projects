@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { Consumer } from "../../context";
+import axios from "axios";
 
 export default class Contact extends Component {
   state = {
@@ -11,7 +13,11 @@ export default class Contact extends Component {
     this.setState({ contactDetailsVisible: !this.state.contactDetailsVisible });
   }
 
-  onClickDelete = (id, dispatch) => {
+  onClickDelete = async (id, dispatch) => {
+    // axios
+    //   .delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+    //   .then((response) => dispatch({ type: "DELETE_CONTACT", payload: id }));
+    await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
     dispatch({ type: "DELETE_CONTACT", payload: id });
   };
 
@@ -55,6 +61,17 @@ export default class Contact extends Component {
                   onClick={this.onClickDelete.bind(this, id, dispatch)}
                   style={{ color: "red", cursor: "pointer", float: "right" }}
                 ></i>
+                {/* Contact Edit section */}
+                <Link to={`/edit-contact/${id}`}>
+                  <i
+                    className="fa fa-pencil-square-o pr-1"
+                    style={{
+                      color: "green",
+                      cursor: "pointer",
+                      float: "right",
+                    }}
+                  ></i>
+                </Link>
               </h4>
               {/* Contact Details Visibility section */}
               {contactDetailsVisible ? (

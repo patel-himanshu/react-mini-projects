@@ -1,10 +1,11 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
 import Header from "./components/Header";
 import Contacts from "./components/contacts/Contacts";
 import AddContact from "./components/contacts/AddContact";
+import EditContact from "./components/contacts/EditContact";
 import Page404 from "./components/Page404";
 import { Provider } from "./context";
 
@@ -18,6 +19,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Contacts} />
               <Route exact path="/add-contact" component={AddContact} />
+              <Route exact path="/edit-contact/:id" component={EditContact} />
               <Route component={Page404} />
             </Switch>
           </div>
