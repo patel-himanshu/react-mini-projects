@@ -1,3 +1,8 @@
+.ContactBook {
+  background-color: #fbf48e;
+  padding-bottom: 2rem;
+}
+
 .fa-times:hover {
   text-shadow: 0 0 10px rgb(255, 145, 0);
 }

@@ -10,10 +10,12 @@ const Header = (props) => {
     <nav className="navbar navbar-expand-sm sticky-top mb-4">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
+          React Mini-Projects
+        </Link>
+        {/* <Link className="navbar-brand" to="/contact-book/">
           <i className="fa fa-book" aria-hidden="true"></i>
           {props.branding}
-        </Link>
-
+        </Link> */}
         <button
           className="navbar-toggler navbar-light"
           type="button"
@@ -24,21 +26,23 @@ const Header = (props) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
         <div
           className={`${isNavCollapsed ? "collapse" : ""} navbar-collapse`}
           id="navbarMobile"
         >
           <ul className="navbar-nav nav-pills ml-auto">
             <li className="nav-item">
-              <Link className="nav-link pl-2 pr-2 mr-1 ml-1 text-right" to="/">
+              <Link
+                className="nav-link pl-2 pr-2 mr-1 ml-1 text-right"
+                to="/contact-book/"
+              >
                 <i className="fa fa-home"> Home</i>
               </Link>
             </li>
             <li className="nav-item">
               <Link
                 className="nav-link pl-2 pr-2 mr-1 ml-1 text-right"
-                to="/add-contact"
+                to="/contact-book/add-contact/"
               >
                 <i className="fa fa-plus"> Add Contact</i>
               </Link>

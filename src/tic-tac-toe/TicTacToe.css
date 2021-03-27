@@ -1,8 +1,8 @@
-body {
+/* body {
   margin: 20px;
   background-color: aliceblue;
   font: 14px "Century Gothic", Futura, sans-serif;
-}
+} */
 
 .board-row:after {
   clear: both;
@@ -38,8 +38,8 @@ body {
 }
 
 h1 {
-    font-family: 'Libre Baskerville', serif;
-    filter: drop-shadow(2px 1px 3px grey);
+  font-family: "Libre Baskerville", serif;
+  filter: drop-shadow(2px 1px 3px grey);
 }
 .game {
   text-align: center;
@@ -52,21 +52,21 @@ h1 {
 }
 
 .new-game {
-    outline: 0;
-    border: none;
-    margin: 5px 0;
-    padding: 5px 10px;
-    font-weight: bold;
-    border-radius: 10px;
-    transition-duration: 0.3s;
-    color: rgb(255, 217, 0);
-    background-color: rgb(2, 2, 206);
+  outline: 0;
+  border: none;
+  margin: 5px 0;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition-duration: 0.3s;
+  color: rgb(255, 217, 0);
+  background-color: rgb(2, 2, 206);
 }
 
 .new-game:hover {
-    color: white;
-    background-color: rgb(38, 38, 209);
-    filter: drop-shadow(0 0 4px rgb(255, 102, 0));
+  color: white;
+  background-color: rgb(38, 38, 209);
+  filter: drop-shadow(0 0 4px rgb(255, 102, 0));
 }
 
 .game-info ol li {
@@ -74,10 +74,10 @@ h1 {
 }
 
 span {
-    color: green;
-    background-color: yellow;
-    margin: 0 2px;
-    padding: 1px 7px;
-    font-weight: bold;
-    border: 1px solid orange;
+  color: green;
+  background-color: yellow;
+  margin: 0 2px;
+  padding: 1px 7px;
+  font-weight: bold;
+  border: 1px solid orange;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Contact from "./Contact";
-import { Consumer } from "../../context";
+import { Consumer } from "../context";
 
 export default class Contacts extends Component {
   render() {
@@ -14,7 +14,8 @@ export default class Contacts extends Component {
                 className="font-weight-bold d-flex justify-content-center text-danger mb-4"
                 style={{ fontSize: "3rem" }}
               >
-                Contacts List
+                <i className="fa fa-book mr-2" aria-hidden="true"></i>
+                Contact Book
               </h1>
               <h6 style={{ float: "right" }}>
                 <i className="btn bg-secondary text-light fa fa-caret-up disabled">

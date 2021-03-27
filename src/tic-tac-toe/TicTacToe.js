@@ -1,6 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
+import { Link } from "react-router-dom";
+import "./TicTacToe.css";
 
 function Square(props) {
   // Functional Component
@@ -48,7 +48,7 @@ class Board extends React.Component {
   }
 }
 
-class Game extends React.Component {
+export default class TicTacToe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -121,7 +121,15 @@ class Game extends React.Component {
 
     return (
       <div className="game">
-        <h1>
+        <nav className="navbar navbar-expand-sm sticky-top mb-4">
+          <div className="container-fluid">
+            <Link className="navbar-brand" to="/">
+              React Mini-Projects
+            </Link>
+          </div>
+        </nav>
+
+        <h1 className="mb-3">
           <u>Tic-Tac-Toe</u>
         </h1>
         <p>
@@ -168,8 +176,6 @@ function calculateWinner(squares) {
   }
   return null;
 }
-
-ReactDOM.render(<Game />, document.getElementById("root"));
 
 // ============ TODO ============
 // [ ] Reset Game button

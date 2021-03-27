@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { Consumer } from "../../context";
+import { Consumer } from "../context";
 import axios from "axios";
 
 export default class Contact extends Component {
@@ -62,7 +62,7 @@ export default class Contact extends Component {
                   style={{ color: "red", cursor: "pointer", float: "right" }}
                 ></i>
                 {/* Contact Edit section */}
-                <Link to={`/edit-contact/${id}`}>
+                <Link to={`/contact-book/edit-contact/${id}`}>
                   <i
                     className="fa fa-pencil-square-o pr-1"
                     style={{

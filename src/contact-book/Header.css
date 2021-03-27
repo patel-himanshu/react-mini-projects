@@ -1,9 +1,3 @@
-nav {
-  background-color: #93d0fa;
-  border-bottom: 4px solid #079bfd;
-  box-shadow: 5px 5px 10px grey;
-}
-
 ul {
   font-family: "Geogia", Arial, sans-serif;
 }
@@ -11,19 +5,18 @@ ul {
 .navbar-brand {
   font-weight: bold;
   color: rgb(0, 0, 56);
-  font-family: "Courier New", Monospace, serif;
+  font-family: "Georgia", Arial, sans-serif;
   /* text-shadow: 2px 2px 1px rgb(192, 163, 163); */
-  text-shadow: 0 5px 6px rgba(0, 0, 0, 0.12), 0 5px 4px rgba(0, 0, 0, 0.24);
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.24);
 }
 
 .navbar-brand:hover {
-  text-shadow: 0 3px 4px orange;
+  color: rgb(0, 0, 255);
+  text-shadow: 0 3px 4px rgb(255, 181, 61);
 }
 
 .nav-link {
   color: blue;
-  margin-top: 5px;
-  padding-left: 2rem;
   border: 2px solid rgb(69, 69, 253);
   background-color: #46b5ff;
   box-shadow: 0 5px 6px rgba(0, 0, 0, 0.12), 0 5px 4px rgba(0, 0, 0, 0.24);

@@ -1,28 +1,16 @@
 import React, { Component } from "react";
-import { Consumer } from "../../context";
-import FormInputField from "../FormInputField";
+import { Consumer } from "../context";
+import FormInputField from "./FormInputField";
+import { v1 as uuid } from "uuid";
 import axios from "axios";
 
-export default class EditContact extends Component {
+export default class AddContact extends Component {
   state = {
     name: "",
     email: "",
     phone: "",
     errors: {},
   };
-
-  async componentDidMount() {
-    const { id } = this.props.match.params;
-    const response = await axios.get(
-      `https://jsonplaceholder.typicode.com/users/${id}`
-    );
-    const contact = response.data;
-    this.setState({
-      name: contact.name,
-      email: contact.email,
-      phone: contact.phone,
-    });
-  }
 
   onFieldChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
@@ -31,7 +19,6 @@ export default class EditContact extends Component {
   onClickSubmit = async (dispatch, e) => {
     e.preventDefault();
     const { name, email, phone } = this.state;
-
     if (name === "") {
       this.setState({ errors: { name: "Name is required" } });
       return;
@@ -44,16 +31,18 @@ export default class EditContact extends Component {
       this.setState({ errors: { phone: "Phone Number is required" } });
       return;
     }
+    const newContact = {
+      id: uuid(),
+      name,
+      email,
+      phone,
+    };
 
-    const { id } = this.props.match.params;
-    const updatedContact = { name, email, phone };
-
-    const response = await axios.put(
-      `https://jsonplaceholder.typicode.com/users/${id}`,
-      updatedContact
+    const response = await axios.post(
+      "https://jsonplaceholder.typicode.com/posts",
+      newContact
     );
-
-    dispatch({ type: "UPDATE_CONTACT", payload: response.data });
+    dispatch({ type: "ADD_CONTACT", payload: response.data });
 
     this.setState({
       name: "",
@@ -62,7 +51,7 @@ export default class EditContact extends Component {
       errors: {},
     });
 
-    this.props.history.push("/");
+    this.props.history.push("/contact-book/");
   };
 
   render() {
@@ -79,7 +68,7 @@ export default class EditContact extends Component {
                 className="card-header font-weight-bold w-100 d-flex justify-content-center"
                 style={{ fontSize: "1.5rem" }}
               >
-                Edit Existing Contact
+                Add New Contact
               </div>
               <div className="card-body">
                 <form onSubmit={this.onClickSubmit.bind(this, dispatch)}>
@@ -87,7 +76,7 @@ export default class EditContact extends Component {
                   <FormInputField
                     label="Name :"
                     name="name"
-                    placeholder={"Enter your Name"}
+                    placeholder="Enter your Name"
                     value={name}
                     onChange={this.onFieldChange}
                     error={errors.name}
@@ -115,7 +104,7 @@ export default class EditContact extends Component {
                   <input
                     className="btn btn-sm btn-block bg-primary text-light font-weight-bold w-50 mx-auto"
                     type="submit"
-                    value="Edit Contact"
+                    value="Add Contact"
                   ></input>
                 </form>
               </div>
