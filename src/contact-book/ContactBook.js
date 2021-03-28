@@ -15,12 +15,8 @@ function ContactBook() {
         <Header />
         <div className="container">
           <Switch>
-            <Route path="/contact-book" component={Contacts} />
-            <Route
-              exact
-              path="/contact-book/add-contact"
-              component={AddContact}
-            />
+            <Route exact path="/contact-book" component={Contacts} />
+            <Route path="/contact-book/add-contact" component={AddContact} />
             <Route
               path="/contact-book/edit-contact/:id"
               component={EditContact}
