@@ -1,3 +1,4 @@
-# React-based Mini Projects
+# React Mini Projects
 
-1. [Tic-Tac-Toe](./tic-tac-toe/)
+1. Contact Book
+1. Tic-Tac-Toe
