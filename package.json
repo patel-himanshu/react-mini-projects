@@ -2,7 +2,7 @@
   "name": "react-mini-projects",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://patel-himanshu.github.io/react-mini-projects",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
