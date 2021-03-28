@@ -62,7 +62,7 @@ export default class EditContact extends Component {
       errors: {},
     });
 
-    this.props.history.push("/contact-book/");
+    this.props.history.push("/contact-book");
   };
 
   render() {

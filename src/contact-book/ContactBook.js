@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./ContactBook.css";
@@ -11,26 +11,23 @@ import { Provider } from "./context";
 function ContactBook() {
   return (
     <Provider>
-      <Router>
-        <div className="ContactBook">
-          <Header />
-          <div className="container">
-            <Switch>
-              <Route exact path="/contact-book/" component={Contacts} />
-              <Route
-                exact
-                path="/contact-book/add-contact"
-                component={AddContact}
-              />
-              <Route
-                exact
-                path="/contact-book/edit-contact/:id"
-                component={EditContact}
-              />
-            </Switch>
-          </div>
+      <div className="ContactBook">
+        <Header />
+        <div className="container">
+          <Switch>
+            <Route path="/contact-book" component={Contacts} />
+            <Route
+              exact
+              path="/contact-book/add-contact"
+              component={AddContact}
+            />
+            <Route
+              path="/contact-book/edit-contact/:id"
+              component={EditContact}
+            />
+          </Switch>
         </div>
-      </Router>
+      </div>
     </Provider>
   );
 }

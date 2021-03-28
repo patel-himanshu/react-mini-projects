@@ -12,10 +12,6 @@ const Header = (props) => {
         <Link className="navbar-brand" to="/">
           React Mini-Projects
         </Link>
-        {/* <Link className="navbar-brand" to="/contact-book/">
-          <i className="fa fa-book" aria-hidden="true"></i>
-          {props.branding}
-        </Link> */}
         <button
           className="navbar-toggler navbar-light"
           type="button"
@@ -34,7 +30,7 @@ const Header = (props) => {
             <li className="nav-item">
               <Link
                 className="nav-link pl-2 pr-2 mr-1 ml-1 text-right"
-                to="/contact-book/"
+                to="/contact-book"
               >
                 <i className="fa fa-home"> Home</i>
               </Link>
@@ -42,7 +38,7 @@ const Header = (props) => {
             <li className="nav-item">
               <Link
                 className="nav-link pl-2 pr-2 mr-1 ml-1 text-right"
-                to="/contact-book/add-contact/"
+                to="/contact-book/add-contact"
               >
                 <i className="fa fa-plus"> Add Contact</i>
               </Link>
