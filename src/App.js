@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import HomePage from "./layouts/HomePage";
@@ -8,7 +8,7 @@ import Page404 from "./layouts/Page404";
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <div className="App">
         <Switch>
           <Route exact path="/" component={HomePage} />
@@ -17,7 +17,7 @@ function App() {
           <Route component={Page404} />
         </Switch>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
