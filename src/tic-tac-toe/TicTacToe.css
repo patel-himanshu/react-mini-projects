@@ -39,7 +39,7 @@
 
 h1 {
   font-family: "Libre Baskerville", serif;
-  filter: drop-shadow(2px 1px 3px grey);
+  filter: drop-shadow(2px 0px 2px rgb(134, 134, 134));
 }
 .game {
   text-align: center;
