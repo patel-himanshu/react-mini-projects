@@ -13,10 +13,18 @@ function ContactBook() {
     <Provider>
       <div className="ContactBook">
         <Header />
+        <h1 className="font-weight-bold d-flex justify-content-center text-danger mb-4">
+          <i className="fa fa-book mr-2" aria-hidden="true"></i>
+          Contact Book
+        </h1>
         <div className="container">
           <Switch>
             <Route exact path="/contact-book" component={Contacts} />
-            <Route exact path="/contact-book/add-contact" component={AddContact} />
+            <Route
+              exact
+              path="/contact-book/add-contact"
+              component={AddContact}
+            />
             <Route
               path="/contact-book/edit-contact/:id"
               component={EditContact}

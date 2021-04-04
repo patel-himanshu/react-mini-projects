@@ -2,6 +2,12 @@ ul {
   font-family: "Geogia", Arial, sans-serif;
 }
 
+nav {
+  background-color: #93d0fa;
+  border-bottom: 4px solid #079bfd;
+  box-shadow: 5px 5px 10px grey;
+}
+
 .navbar-brand {
   font-weight: bold;
   color: rgb(0, 0, 56);

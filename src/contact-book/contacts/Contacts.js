@@ -10,10 +10,6 @@ export default class Contacts extends Component {
           const { contacts } = value;
           return (
             <React.Fragment>
-              <h1 className="font-weight-bold d-flex justify-content-center text-danger mb-4">
-                <i className="fa fa-book mr-2" aria-hidden="true"></i>
-                Contact Book
-              </h1>
               <h6 style={{ float: "right" }}>
                 <i className="btn bg-secondary text-light fa fa-caret-up disabled">
                   {" "}
