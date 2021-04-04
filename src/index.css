@@ -8,11 +8,13 @@ ul {
   font-family: "Georgia", Arial, sans-serif;
   /* text-shadow: 2px 2px 1px rgb(192, 163, 163); */
   text-shadow: 0 4px 6px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.24);
+  transition-duration: 0.3s;
 }
 
 .navbar-brand:hover {
   color: rgb(0, 0, 255);
-  text-shadow: 0 3px 4px rgb(255, 181, 61);
+  text-shadow: 0 3px 4px rgb(255, 236, 61);
+  transition-duration: 0.3s;
 }
 
 .nav-link {
@@ -20,10 +22,24 @@ ul {
   border: 2px solid rgb(69, 69, 253);
   background-color: #46b5ff;
   box-shadow: 0 5px 6px rgba(0, 0, 0, 0.12), 0 5px 4px rgba(0, 0, 0, 0.24);
+  transition-duration: 0.3s;
   /* text-shadow: 2px 2px 1px rgb(251, 244, 135); */
 }
 
 .nav-link:hover {
-  background-color: #fcd782;
-  box-shadow: 0 2px 5px blue, 0 2px 2px blue;
+  color: white;
+  background-color: rgb(32, 32, 255);
+  transition-duration: 0.3s;
+  /* background-color: #fcd782; */
+  /* box-shadow: 0 2px 5px blue, 0 2px 2px blue; */
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
 }

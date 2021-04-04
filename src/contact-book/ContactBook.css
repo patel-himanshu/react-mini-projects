@@ -1,17 +1,9 @@
-h1 {
-  font-size: 3rem;
-}
-
 .fa-times:hover {
   text-shadow: 0 0 10px rgb(255, 145, 0);
 }
 
-@media (max-width: 360px) {
+/* @media (max-width: 360px) {
   h1 {
     font-size: 2.5rem;
   }
-
-  h4 {
-    font-size: 1.2rem;
-  }
-}
+} */
