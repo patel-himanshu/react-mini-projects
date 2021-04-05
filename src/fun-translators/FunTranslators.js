@@ -19,6 +19,12 @@ export default class FunTranslators extends Component {
             Fun Translators
           </h1>
           <Translator />
+          <p className="text-danger text-center">
+            <b>
+              Note: You can only make 5 translations per hour, before getting an
+              error message.
+            </b>
+          </p>
         </div>
       </>
     );
