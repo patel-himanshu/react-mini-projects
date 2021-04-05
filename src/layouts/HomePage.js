@@ -11,6 +11,9 @@ export default class HomePage extends Component {
             <Link to="/contact-book">Contact Book</Link>
           </li>
           <li className="list-group-item" style={{ fontSize: "1.5rem" }}>
+            <Link to="/fun-translators">Fun Translators</Link>
+          </li>
+          <li className="list-group-item" style={{ fontSize: "1.5rem" }}>
             <Link to="/tic-tac-toe">Tic-Tac-Toe</Link>
           </li>
         </ul>

@@ -3,9 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import HomePage from "./layouts/HomePage";
 import ContactBook from "./contact-book/ContactBook";
-import ExpenseTracker from "./expense-tracker/ExpenseTracker";
 import TicTacToe from "./tic-tac-toe/TicTacToe";
 import Page404 from "./layouts/Page404";
+import FunTranslators from "./fun-translators/FunTranslators";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/contact-book" component={ContactBook} />
-          <Route path="/expense-tracker" component={ExpenseTracker} />
+          <Route path="/fun-translators" component={FunTranslators} />
           <Route path="/tic-tac-toe" component={TicTacToe} />
           <Route component={Page404} />
         </Switch>

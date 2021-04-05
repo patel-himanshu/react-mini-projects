@@ -1,0 +1,16 @@
+#Translator {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+form {
+  color: rgb(0, 122, 41);
+}
+
+select {
+  margin: 0 1rem;
+  font-size: 1.4rem;
+}
+
+#Translation {
+  color: blue;
+}
