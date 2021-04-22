@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = (props) => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
@@ -27,20 +27,21 @@ const Header = (props) => {
         >
           <ul className="navbar-nav nav-pills ml-auto">
             <li className="nav-item">
-              <Link
+              <NavLink
                 className="nav-link mr-1 pl-2 pr-2 text-right"
                 to="/contact-book"
+                exact
               >
                 <i className="fa fa-home"> Home</i>
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
+              <NavLink
                 className="nav-link mr-1 pl-2 pr-2 text-right"
                 to="/contact-book/add-contact"
               >
                 <i className="fa fa-plus"> Add Contact</i>
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
