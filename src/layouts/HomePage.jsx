@@ -14,6 +14,9 @@ export default class HomePage extends Component {
             <Link to="/fun-translators">Fun Translators</Link>
           </li>
           <li className="list-group-item" style={{ fontSize: "1.5rem" }}>
+            <Link to="/othello">Othello (or Reversi)</Link>
+          </li>
+          <li className="list-group-item" style={{ fontSize: "1.5rem" }}>
             <Link to="/tic-tac-toe">Tic-Tac-Toe</Link>
           </li>
         </ul>
