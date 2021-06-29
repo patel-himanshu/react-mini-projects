@@ -130,7 +130,9 @@ export default class TicTacToe extends React.Component {
         </nav>
 
         <h1 className="mb-3">
+          <i className="fa fa-check mr-3" aria-hidden="true"></i>
           <u>Tic-Tac-Toe</u>
+          <i className="fa fa-times ml-3" aria-hidden="true"></i>
         </h1>
         <p>
           <u>Wins by X</u>: <span>{this.state.xWins}</span>, <u>Wins by O</u>:{" "}

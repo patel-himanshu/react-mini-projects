@@ -15,7 +15,7 @@ export default class FunTranslators extends Component {
         </nav>
         <div className="container">
           <h1 className="font-weight-bold d-flex justify-content-center text-primary mb-4">
-            <i className="fa fa-language mr-2" aria-hidden="true"></i>
+            <i className="fa fa-language mr-3" aria-hidden="true"></i>
             Fun Translators
           </h1>
           <Translator />
